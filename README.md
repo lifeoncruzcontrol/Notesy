@@ -1,1 +1,1 @@
-Simple notes app using Expressjs and Postgres 
+Simple notes app using React, Expressjs, Postgres 
