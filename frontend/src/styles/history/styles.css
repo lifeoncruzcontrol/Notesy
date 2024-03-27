@@ -1,0 +1,15 @@
+.pageTitle {
+  text-align: center;
+}
+
+.historyCol {
+  width: 33%;
+}
+
+.cellContent {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  max-height: 20em;
+  overflow-y: auto;
+}

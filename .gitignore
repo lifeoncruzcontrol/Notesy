@@ -1,0 +1,4 @@
+*.log
+*/PG_*
+**/node_modules
+**/*.env
