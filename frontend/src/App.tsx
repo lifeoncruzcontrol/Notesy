@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { firebaseAuth } from './config/firebaseConfig';
+import { onAuthStateChanged } from 'firebase/auth';
 import { BrowserRouter } from 'react-router-dom';
+import Header from './components/Header';
 import Navigation from './Navigation';
 import AppRouter from './AppRouter';
-import './styles/app/styles.css';
 
 const App: React.FC = () => {
+  const [loggedIn, setLoggedIn] = useState<boolean>(false);
+  useEffect(() => {
+    onAuthStateChanged(firebaseAuth, (user) => {
+      if (user) {
+        setLoggedIn(true);
+      } else {
+        setLoggedIn(false);
+      }
+    })
+  }, []);
   return (
     <div>
-      <h1 id="appname">Notesy</h1>
+      <Header />
       <br />
       <BrowserRouter>
-        <Navigation />
-        <br />
-        <AppRouter />
+      {loggedIn && <Navigation />}
+      <br />
+      <AppRouter loggedIn={loggedIn}/>
       </BrowserRouter>
     </div>
   )

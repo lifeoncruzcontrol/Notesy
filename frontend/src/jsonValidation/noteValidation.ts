@@ -12,7 +12,7 @@ export function isNote(value: unknown): value is Note {
     object.hasOwnProperty("notetext") &&
     object.hasOwnProperty("notedate") &&
     typeof object.noteid == 'number' &&
-    typeof object.userid == 'string' &&
+    typeof object.userid == 'number' &&
     typeof object.notetext == 'string' &&
     typeof object.notedate == 'string'
 };

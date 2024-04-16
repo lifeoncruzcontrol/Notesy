@@ -10,7 +10,7 @@ const History: React.FC = () => {
   const [noteKeys, setNoteKeys] = useState<string[] | undefined>(undefined);
   const fetchData = async () => {
     const data = await getAllNotes();
-    setNoteKeys(Object.keys(data[0]).filter((key) => key != "userid"));
+    data && setNoteKeys(Object.keys(data[0]).filter((key) => key != "userid"));
     setNotesPayload(data);
   };
   useEffect(() => {

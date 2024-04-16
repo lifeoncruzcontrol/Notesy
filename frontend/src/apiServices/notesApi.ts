@@ -9,7 +9,7 @@ export const getAllNotes = async () => {
     }
     const data = await res.json();
 
-    if(!isNotesArray){
+    if(!isNotesArray(data)){
       throw new Error('Invalid data: array with notes expected');
     }
 

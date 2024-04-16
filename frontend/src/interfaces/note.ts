@@ -1,6 +1,6 @@
 export interface Note {
   noteid: number,
-  userid: string,
+  userid: number,
   notetext: string,
   notedate: string
 }
